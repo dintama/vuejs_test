@@ -1,0 +1,33 @@
+<html>
+	<head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	 <title>vue_04</title>
+	 <script type="text/javascript" src='node_modules\vue\dist\vue.min.js'></script>
+	</head>
+	<body>
+
+		<div id="app" v-bind:style="styleObject">
+			<div>
+				<input ref="target" type="range" min="0" max="255" v-on:onChange="update" v-model="red"/>
+			</div>
+			RED: {{red}}
+			<div>
+				<input ref="target" type="range" min="0" max="255" @onChange="update" v-model="green"/>
+			</div>
+			GREEN: {{green}}
+			<div>
+				<input ref="target" type="range" min="0" max="255" @onChange="update" v-model="blue"/>
+			</div>
+			BLUE: {{blue}}
+			<paint-slider></paint-slider>
+		</div>
+		<div id="test">
+			{{{msg}}}
+			<ul>
+				<li v-for="item in items" ><p v-if="item.isFinally">{{item.label}}</p></li>
+			</ul>
+		</div>
+
+	</body>
+	<script src="vue_04.js"></script>
+<html>
